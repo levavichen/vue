@@ -1,5 +1,6 @@
 <template>
-    <input @input="onSetFilter" v-model="filterBy.txt" placeholder="Search"/>
+    <input @input="onSetFilter" v-model="filterBy.txt" type="text" placeholder="Search"/>
+    <input @input="onSetFilter" v-model="filterBy.maxRunningTime" type="number" placeholder="Max running time"/>
 </template>
 
 <script>
@@ -7,7 +8,8 @@ export default {
     data() {
         return {
             filterBy: {
-                txt: ''
+                txt: '',
+                maxRunningTime:0
             }
         }
     },

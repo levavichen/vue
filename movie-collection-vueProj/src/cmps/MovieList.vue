@@ -47,7 +47,7 @@ export default {
         display: grid;
 
         padding: 10px;
-        background-color: lightblue;
+        background-color: #f8dec7;
     }
 
     .actions {

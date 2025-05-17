@@ -3,7 +3,7 @@ export default [
         _id: 'm101',
         title: 'Inception',
         director: 'Christopher Nolan',
-        posterUrl: 'https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg',
+        posterUrl: 'https://www.themoviedb.org/t/p/w1280/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg',
         runningTime: 148,
         releaseYear: 2010,
         actors: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt', 'Elliot Page'],

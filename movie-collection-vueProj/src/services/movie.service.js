@@ -13,7 +13,7 @@ export const movieService = {
 	remove,
 	save,
 	getEmptyMovie,
-    getMoviePoster,
+	getMoviePoster,
 }
 
 async function query(filterBy = {}) {
@@ -21,8 +21,16 @@ async function query(filterBy = {}) {
 
 	if (filterBy.txt) {
 		const regex = new RegExp(filterBy.txt, 'i')
-		movies = movies.filter(movie => regex.test(movie.title))
+		movies = movies.filter(movie =>
+			regex.test(movie.title) ||
+			regex.test(movie.director) ||
+			regex.test(movie.actors))
 	}
+
+	if (filterBy.maxRunningTime) {
+		movies = movies.filter(movie => movie.runningTime <= filterBy.maxRunningTime)
+	}
+
 	return movies
 }
 
@@ -52,16 +60,16 @@ function getEmptyMovie() {
 }
 
 async function getMoviePoster(title) {
-	const API_KEY = 'abc123'
+	const API_KEY = '93d4dd62'
 
 	const res = await fetch(`https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${API_KEY}`)
-    const data = await res.json()
-    
-    if (data.Response === 'True') {
-        return data.Poster // Use this in your UI
-    } else {
-        return '../../default.png'
-    }
+	const data = await res.json()
+
+	if (data.Response === 'True') {
+		return data.Poster // Use this in your UI
+	} else {
+		return '../../default.png'
+	}
 }
 
 function _createMovies() {
