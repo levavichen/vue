@@ -3,7 +3,7 @@
         <MovieFilter @filter="onFilter" />
         <RouterLink to="/movie/edit"><button>Add a Movie</button></RouterLink>
     </header>
-	<MovieList @remove="removeMovie" v-if="movies" :movies="movies" />
+    <MovieList @remove="removeMovie" v-if="movies" :movies="movies" />
     <h2 v-else>Loading...</h2>
 </template>
 
@@ -16,16 +16,16 @@ import { debounce } from '@/services/util.service'
 import { showErrorMsg, showSuccessMsg } from '@/services/event-bus.service'
 
 export default {
-	data() {
-		return {
-			movies: null,
-		}
-	},
+    data() {
+        return {
+            movies: null,
+        }
+    },
     methods: {
         async removeMovie(movieId) {
             try {
                 await movieService.remove(movieId)
-    
+
                 const idx = this.movies.findIndex(movie => movie._id === movieId)
                 this.movies.splice(idx, 1)
                 showSuccessMsg('Movie deleted')
@@ -40,11 +40,11 @@ export default {
             this.movies = await movieService.query(filterBy)
             showSuccessMsg('Movies loaded!')
         },
-    },  
-	async created() {
+    },
+    async created() {
         this.debouncedLoadMovies = debounce(this.loadMovies)
-		this.loadMovies()
-	},
+        this.loadMovies()
+    },
     components: {
         MovieList,
         MovieFilter,
@@ -52,4 +52,14 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style scoped lang="scss">
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #f8dec7;
+}
+</style>

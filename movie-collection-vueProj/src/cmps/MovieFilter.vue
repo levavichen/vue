@@ -1,6 +1,11 @@
 <template>
-    <input @input="onSetFilter" v-model="filterBy.txt" type="text" placeholder="Search"/>
-    <input @input="onSetFilter" v-model="filterBy.maxRunningTime" type="number" placeholder="Max running time"/>
+    <div class="field">
+        <input @input="onSetFilter" v-model="filterBy.txt" type="text" placeholder="Search a movie..." />
+    </div>
+    <div class="max-rating">
+        <label>Max rating</label>
+        <input @input="onSetFilter" v-model="filterBy.maxRunningTime" type="number" placeholder="Max running time" />
+    </div>
 </template>
 
 <script>
@@ -9,7 +14,7 @@ export default {
         return {
             filterBy: {
                 txt: '',
-                maxRunningTime:0
+                maxRunningTime: 0
             }
         }
     },
@@ -22,5 +27,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+.max-rating{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
 </style>

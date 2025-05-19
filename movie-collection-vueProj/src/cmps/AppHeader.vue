@@ -1,7 +1,7 @@
 <template>
   <header>
     <section class="logo">
-      <!-- <img src="../assets/logo.png" alt="logo" /> -->
+      <img src="../assets/logo.png" alt="logo" />
       <h1>Popcorn Picks</h1>
     </section>
     <nav>
@@ -16,12 +16,12 @@
 export default {};
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 5vh;
+  height: 6vh;
 
   padding: 10px;
   background-color: #f9c9b7;
@@ -29,11 +29,10 @@ header {
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 
     img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 50px;
       display: block;
     }
 

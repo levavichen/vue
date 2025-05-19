@@ -35,7 +35,7 @@
     <button type="button" @click="getPoster">Get Poster</button>
     <div class="field">
       <label>actors</label>
-      <input v-bind:value="movie.actors" type="text" placeholder="poster url" />
+      <input v-bind:value="movie.actors" type="text" placeholder="actors" />
     </div>
     <button type="button" @click="editActors">Edit Actors</button>
 
@@ -61,7 +61,8 @@ export default {
       this.$router.push("/movie");
     },
     async getPoster() {
-      const posterUrl = movieService.getMoviePoster(this.movie.title);
+      const posterUrl = await movieService.getMoviePoster(this.movie.title);
+      console.log('posterUrl', posterUrl)
       this.movie.posterUrl = posterUrl;
     },
     editActors() {

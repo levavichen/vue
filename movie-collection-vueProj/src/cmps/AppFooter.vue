@@ -9,7 +9,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 5vh;
+    height: 6vh;
 
     padding: 10px;
     background-color: #f9c9b7;

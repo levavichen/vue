@@ -26,3 +26,33 @@ a {
     color: #94312d;
 
 }
+
+button {
+    border: none;
+    background-color: transparent;
+    padding: 0.5em;
+
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Fredoka', sans-serif;
+    color: #94312d;
+}
+
+button:hover {
+    border-radius: 20px;
+    background-color: #f9c9b7;
+    cursor: pointer;
+}
+
+input {
+    border-radius: 25px;
+    border: 0.5px solid black;
+    text-align: center;
+
+
+}
+
+input:focus-visible {
+    outline-color: #94312d;
+
+}

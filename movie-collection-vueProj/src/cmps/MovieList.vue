@@ -6,7 +6,7 @@
                 <div class="actions">
                     <RouterLink :to="`movie/${movie._id}`"><button>Details</button></RouterLink>
                     <RouterLink :to="`movie/edit/${movie._id}`"><button>Edit</button></RouterLink>
-                    <button @click="onRemoveMovie(movie._id)">x</button>
+                    <button class="remove-btn" @click="onRemoveMovie(movie._id)">x</button>
                 </div>
             </li>
         </ul>
@@ -51,9 +51,11 @@ export default {
     }
 
     .actions {
+        grid-column: 1/3;
         display: flex;
+        align-items: center;
+        justify-content: space-between;
         gap: 5px;
-        justify-self: end;
     }
 }
 </style>

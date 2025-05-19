@@ -64,6 +64,8 @@ async function getMoviePoster(title) {
 
 	const res = await fetch(`https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${API_KEY}`)
 	const data = await res.json()
+	console.log('title', title)
+	console.log('data.Response', data.Response)
 
 	if (data.Response === 'True') {
 		return data.Poster // Use this in your UI

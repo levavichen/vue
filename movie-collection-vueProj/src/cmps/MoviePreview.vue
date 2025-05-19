@@ -19,15 +19,20 @@ export default {
 
 <style lang="scss">
 .movie-preview {
+  grid-column: 1 / 3;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    margin-block-end: 1rem;
+
+    object-fit: cover;
+  }
+
   h3 {
     font-size: 1.5rem;
     font-weight: bold;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
   }
 }
 </style>
