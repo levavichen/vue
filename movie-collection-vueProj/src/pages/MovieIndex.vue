@@ -25,7 +25,8 @@ export default {
             }
         },
         onFilter(filterBy) {
-            this.debouncedLoadMovies(filterBy)
+            this.$store.commit({ type: 'setFilterBy', filterBy })
+            this.debouncedLoadMovies()
         },
         async loadMovies() {
             await this.$store.dispatch({ type: 'loadMovies' })

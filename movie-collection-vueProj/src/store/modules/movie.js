@@ -1,9 +1,12 @@
+import { showErrorMsg } from "@/services/event-bus.service"
 import { movieService } from "@/services/movie.service"
 
 export default {
     state() {
         return {
-            movies: []
+            movies: [],
+            filterBy: {},
+            savedMovies: [],
         }
     },
     mutations: {
@@ -13,7 +16,16 @@ export default {
         removeMovie(state, { movieId }) {
             const idx = state.movies.findIndex(movie => movie._id === movieId)
             state.movies.splice(idx, 1)
-        }
+        },
+        setFilterBy(state, { filterBy }) {
+            state.filterBy = { ...filterBy }
+        },
+        saveMovies(state) {
+            state.savedMovies = [...state.movies]
+        },
+        restoreMovies(state) {
+            state.movies = [...state.savedMovies]
+        },
     },
     actions: {
         async loadMovies({ commit, state }) {
@@ -21,9 +33,14 @@ export default {
             commit({ type: 'setMovies', movies })
         },
         async removeMovie({ commit }, { movieId }) {
-            console.log('movie id', movieId)
-            await movieService.remove(movieId)
-            commit({ type: 'removeMovie', movieId })
+            try {
+                commit({ type: 'saveMovies' })
+                commit({ type: 'removeMovie', movieId })
+                await movieService.remove(movieId)
+            } catch (err) {
+                commit({ type: 'restoreMovies' })
+                throw err
+            }
         }
     },
     getters: {
