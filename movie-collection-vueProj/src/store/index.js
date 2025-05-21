@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-// import movie from './modules/movie'
+import movie from './modules/movie'
 
 const options = {
     strict: true,
@@ -29,9 +29,9 @@ const options = {
             return state.counter
         }
     },
-    // modules: {
-    //     movie,
-    // }
+    modules: {
+        movie,
+    }
 }
 
 const store = createStore(options)
