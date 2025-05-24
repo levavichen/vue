@@ -1,19 +1,19 @@
 <template>
   <form v-if="movie" @submit.prevent="onSave" class="movie-edit">
     <div class="field">
-      <label>title</label>
+      <label>Title</label>
       <input v-model="movie.title" type="text" placeholder="title" />
     </div>
     <div class="field">
-      <label>director</label>
+      <label>Director</label>
       <input v-model="movie.director" type="text" placeholder="director" />
     </div>
     <div class="field">
-      <label>genre</label>
+      <label>Genre</label>
       <input v-model="movie.genre" type="text" placeholder="genre" />
     </div>
     <div class="field">
-      <label>running time</label>
+      <label>Running time</label>
       <input
         v-model="movie.runningTime"
         type="number"
@@ -21,7 +21,7 @@
       />
     </div>
     <div class="field">
-      <label>release year</label>
+      <label>Release year</label>
       <input
         v-model="movie.releaseYear"
         type="number"
@@ -29,16 +29,15 @@
       />
     </div>
     <div class="field">
-      <label>poster url</label>
+      <label>Poster URL</label>
       <input v-model="movie.posterUrl" type="text" placeholder="poster url" />
+      <button type="button" @click="getPoster">Get Poster</button>
     </div>
-    <button type="button" @click="getPoster">Get Poster</button>
     <div class="field">
-      <label>actors</label>
+      <label>Actors</label>
       <input v-bind:value="movie.actors" type="text" placeholder="actors" />
+      <button type="button" @click="editActors">Edit Actors</button>
     </div>
-    <button type="button" @click="editActors">Edit Actors</button>
-
     <div class="actions">
       <button>Save</button>
       <RouterLink to="/movie"><button type="button">Cancel</button></RouterLink>
@@ -89,15 +88,27 @@ export default {
 .movie-edit {
   display: grid;
   justify-items: start;
-  gap: 0.3rem;
+  gap: 1em;
 
   padding: 10px;
-  background-color: rgb(254, 211, 130);
 
+  label{
+      width: 95px;
+  }
   .actions {
     display: flex;
     gap: 0.3rem;
     justify-self: end;
+  }
+
+  button{
+    margin: 0;
+  }
+
+  .field{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
   }
 }
 </style>

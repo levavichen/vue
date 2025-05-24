@@ -52,6 +52,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-block-start: 8px;
 }
 
 button:hover {

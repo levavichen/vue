@@ -34,7 +34,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .movie-list ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -53,9 +53,14 @@ export default {
     .actions {
         grid-column: 1/3;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        align-items: flex-end;
+        justify-content: flex-end;
         gap: 5px;
+
+        button{
+            margin: 0;
+            align-self: flex-end;
+        }
     }
 }
 </style>

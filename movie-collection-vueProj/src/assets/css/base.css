@@ -29,28 +29,37 @@ a {
 }
 
 button {
-    border: none;
-    background-color: transparent;
-    padding: 0.5em;
-
-    font-size: 1em;
-    font-weight: bold;
-    font-family: 'Fredoka', sans-serif;
-    color: #94312d;
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 8px;
+    max-width: 200px;
+    background-color: #f9c9b7;
+    border: 0.01em solid transparent;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out;
 }
 
+
 button:hover {
-    border-radius: 20px;
-    background-color: #f9c9b7;
+    background-color: #ffd9cb;
     cursor: pointer;
+    color: #94312d;
+    border: 0.01em solid #94312d;
 }
 
 input {
-    border-radius: 25px;
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 8px;
     border: 0.5px solid black;
     text-align: center;
-
-
 }
 
 input:focus-visible {
