@@ -1,7 +1,7 @@
 <template>
-    <h1>Home</h1>
-    <p>{{ $store.state.counter }}</p>
-    <button @click="onIncrement">+1</button>
+    <h1>Welcome dear visitor!</h1>
+    <p>This app has been visited <strong>{{ $store.state.counter }}</strong> times</p>
+    <button @click="onIncrement">Simulate a new visit</button>
 </template>
 
 <script>

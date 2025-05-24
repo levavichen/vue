@@ -5,7 +5,7 @@ const options = {
     strict: true,
     state() {
         return {
-            counter: 0,
+            counter: 462,
         }
     },
     mutations: {
